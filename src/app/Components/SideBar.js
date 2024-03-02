@@ -13,6 +13,7 @@ const Sidebar = () => {
           <li>
             <a href="#" className={styles.link}>Dashboard</a>
           </li>
+    
           <li>
             <a href="#" className={styles.link}>Settings</a>
           </li>

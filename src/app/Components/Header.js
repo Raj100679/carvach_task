@@ -15,23 +15,18 @@ const Header = () => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       setIsSmallScreen(screenWidth <= 440);
-      // Reset the state if screen size is larger than 440px
       if (!isSmallScreen && showMenu) {
         setShowMenu(false);
       }
     };
 
-    // Call handleResize initially to set the initial state
     handleResize();
 
-    // Add event listener for window resize
     window.addEventListener('resize', handleResize);
-
-    // Remove event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [showMenu, isSmallScreen]); // Add showMenu and isSmallScreen as dependencies
+  }, [showMenu, isSmallScreen]); 
 
   return (
     <header className={styles.header}>
@@ -61,6 +56,11 @@ const Header = () => {
             <li>
               <Link href="/profile">
                 <p>Profile</p>
+              </Link>
+            </li>
+            <li>
+              <Link href="/docs">
+                <p>Documentation</p>
               </Link>
             </li>
           </ul>
