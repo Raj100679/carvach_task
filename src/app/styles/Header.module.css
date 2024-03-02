@@ -1,0 +1,131 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.nav {
+  position: relative;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  margin-right: 20px;
+}
+
+.nav ul li:last-child {
+  margin-right: 0;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav ul li a:hover {
+  text-decoration: underline; 
+}
+
+.menuToggle {
+  display: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburgerIcon::before,
+.hamburgerIcon::after,
+.closeIcon::before,
+.closeIcon::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburgerIcon::before,
+.hamburgerIcon::after {
+  top: -10px;
+}
+
+.hamburgerIcon::after {
+  top: 10px;
+}
+
+.closeIcon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.closeIcon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.menu {
+  display: flex;
+}
+
+.menuActive {
+  display: none;
+}
+
+@media screen and (max-width: 440px) {
+  .nav ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .menuToggle {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menuActive {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 100;
+    top: calc(100% + 10px); 
+    right: 20px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .nav ul li {
+    margin: 10px;
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 440px) {
+  .nav ul li { 
+    display: block;
+  }
+}

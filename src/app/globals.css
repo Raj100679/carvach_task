@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+.allcenter{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
